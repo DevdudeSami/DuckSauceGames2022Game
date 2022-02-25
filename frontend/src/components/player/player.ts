@@ -32,6 +32,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       frameRate: 8,
       repeat: -1,
     })
+    this.setScale(3, 3);
     this.play('wriggle')
 
   }
