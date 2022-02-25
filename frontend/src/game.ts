@@ -3,6 +3,7 @@ import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
 // @ts-ignore
 import SpineWebGLPlugin from './plugins/SpineWebGLPlugin'
+import NetworkManager from './network'
 
 type scaleMode = 'FIT' | 'SMOOTH'
 
@@ -83,6 +84,7 @@ window.addEventListener('load', () => {
     // center the game with css margin
     game.canvas.style.marginTop = `${(h - newHeight * scale) / 2}px`
     game.canvas.style.marginLeft = `${(w - newWidth * scale) / 2}px`
+    NetworkManager.connectSocket();
   }
   window.addEventListener('resize', (event) => {
     resize()

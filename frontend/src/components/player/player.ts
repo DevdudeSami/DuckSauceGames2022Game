@@ -1,10 +1,8 @@
-import PlayerSpine from './playerSpine'
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   private _dead: boolean = false
   private _halt: boolean = false
   private mapSize: MapSize
-  playerSpine: PlayerSpine
 
   constructor(scene: Phaser.Scene, player: TilesConfig, mapSize: MapSize, level: number) {
     super(scene, player.x, player.y, player.texture)
@@ -22,7 +20,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // })
     // this.play('walk')
 
-    this.setVisible(false)
 
     this.setOrigin(0, 1)
     this.setDragX(1500)
@@ -30,8 +27,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.body.setOffset(25, 24)
 
     let theSkin = level % 2 == 0 ? 'blue' : 'green'
-    this.playerSpine = new PlayerSpine(scene, this.body.center.x, this.body.bottom)
-    this.playerSpine.setSkin(theSkin)
+    scene.anims.create({
+      key: 'fly',
+      frames: scene.anims.generateFrameNumbers('bee', { start: 0, end: 1 }),
+      frameRate: 8,
+      repeat: -1,
+    })
+    this.play('fly')
+
   }
 
   kill() {
@@ -46,7 +49,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   killEnemy() {
-    this.playerSpine.spine.customParams.isKilling = true
     this.setVelocityY(-600)
   }
 
@@ -76,6 +78,5 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     // update spine animation
-    this.playerSpine.update(this)
   }
 }

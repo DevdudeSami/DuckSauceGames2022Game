@@ -4,21 +4,17 @@ export default class NetworkManager {
   private static _socket: Socket
 
   public static connectSocket() {
-    const socket = io('http://localhost:3000')
-
-    socket.on('connect', () => {
-      console.log(socket.id)
-    })
-    socket.on('disconnect', () => {
-      console.log(socket.id)
-    })
+    var socket = new WebSocket('ws://localhost:8089/')
+    console.log('connecting socket connection')
+    socket.onopen = function (event) {
+      socket.send("Here's some text that the server is urgently awaiting!")
+    }
+    socket.onmessage = function (event) {
+      console.log(event.data)
+    }
   }
 
-  public static createGame() {
+  public static createGame() {}
 
-  }
-
-  public static joinGame() {
-        
-  }
+  public static joinGame() {}
 }
