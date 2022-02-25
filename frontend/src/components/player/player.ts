@@ -23,17 +23,16 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.setOrigin(0, 1)
     this.setDragX(1500)
-    this.body.setSize(70, 132)
-    this.body.setOffset(25, 24)
+    this.body.setSize(20, 20)
+    this.body.setOffset(0, 0)
 
-    let theSkin = level % 2 == 0 ? 'blue' : 'green'
     scene.anims.create({
-      key: 'fly',
-      frames: scene.anims.generateFrameNumbers('bee', { start: 0, end: 1 }),
+      key: 'wriggle',
+      frames: scene.anims.generateFrameNumbers('worm', { start: 0, end: 1 }),
       frameRate: 8,
       repeat: -1,
     })
-    this.play('fly')
+    this.play('wriggle')
 
   }
 
