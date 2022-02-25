@@ -37,7 +37,7 @@ module.exports = {
       ],
     }),
     new InjectManifest({
-      swSrc: path.resolve(__dirname, '../src/pwa/sw.js'),
+      swSrc: path.resolve('/src/pwa/sw.js'),
       exclude: [/\/spine\/raw\/*/],
     }),
   ],
