@@ -25,7 +25,7 @@ export default class LevelText extends Phaser.GameObjects.Text {
         ...config,
         onComplete: () => {
           if (config.onComplete) config.onComplete()
-          resolve()
+          resolve({})
         }
       })
     })
