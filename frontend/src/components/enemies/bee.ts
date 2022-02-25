@@ -9,7 +9,7 @@ export default class BeeSprite extends EnemyClass {
       key: 'fly',
       frames: scene.anims.generateFrameNumbers('bee', { start: 0, end: 1 }),
       frameRate: 8,
-      repeat: -1
+      repeat: -1,
     })
     this.play('fly')
 

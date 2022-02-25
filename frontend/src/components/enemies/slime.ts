@@ -10,7 +10,7 @@ export default class SlimeSprite extends EnemyClass {
       frames: scene.anims.generateFrameNumbers('slime', { start: 0, end: 4 }),
       frameRate: 6,
       yoyo: true,
-      repeat: -1
+      repeat: -1,
     })
     this.play('crawl')
 

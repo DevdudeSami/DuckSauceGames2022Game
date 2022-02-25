@@ -23,8 +23,8 @@ export default class GoalSprite extends Phaser.Physics.Arcade.Sprite {
     scene.time.addEvent({
       delay: 2000,
       callback: () => {
-        scene.scene.restart({ level: level += 1 })
-      }
+        scene.scene.restart({ level: (level += 1) })
+      },
     })
   }
 }

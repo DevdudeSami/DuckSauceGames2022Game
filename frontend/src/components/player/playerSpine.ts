@@ -15,7 +15,7 @@ export default class PlayerSpine {
     this.spine = scene.add.spine(x, y, spine, animation, play)
     this.spine.customParams = {
       animation,
-      isKilling: false
+      isKilling: false,
     }
     this.spine.play(this.spine.customParams.animation, true)
     this.spine.setMix('run', 'idle', 0.3)

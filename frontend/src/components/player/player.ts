@@ -1,4 +1,3 @@
-
 import PlayerSpine from './playerSpine'
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
@@ -42,7 +41,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.scene.cameras.main.shake(500, 0.025)
     this.scene.time.addEvent({
       delay: 500,
-      callback: () => this.scene.scene.restart()
+      callback: () => this.scene.scene.restart(),
     })
   }
 

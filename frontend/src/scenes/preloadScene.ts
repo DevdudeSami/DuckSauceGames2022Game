@@ -1,13 +1,13 @@
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
     super({
-      key: 'PreloadScene'
+      key: 'PreloadScene',
     })
   }
 
   preload() {
     const images = ['tile-left', 'tile-middle', 'tile-right', 'tile-single', 'controls', 'background', 'goal']
-    images.forEach(img => {
+    images.forEach((img) => {
       this.load.image(img, `assets/img/${img}.png`)
     })
     this.load.spritesheet('player', 'assets/img/player.png', { frameHeight: 165, frameWidth: 120 })

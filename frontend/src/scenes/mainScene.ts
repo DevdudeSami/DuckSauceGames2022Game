@@ -21,7 +21,7 @@ export default class MainScene extends Phaser.Scene {
   miniMap: MiniMap
   constructor() {
     super({
-      key: 'MainScene'
+      key: 'MainScene',
     })
   }
 
@@ -43,11 +43,17 @@ export default class MainScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys()
 
     this.background = new Background(this)
-    this.tilesGroup = new TilesGroup(this, map.info.filter((el: TilesConfig) => el.type === 'tile'))
+    this.tilesGroup = new TilesGroup(
+      this,
+      map.info.filter((el: TilesConfig) => el.type === 'tile')
+    )
     this.goal = new GoalSprite(this, map.info.filter((el: TilesConfig) => el.type === 'goal')[0])
     this.player = new Player(this, map.info.filter((el: TilesConfig) => el.type === 'player')[0], map.size, this.level)
     this.enemiesGroup = new EnemiesGroup(this, map.info)
-    const coinGroup = new CoinGroup(this, map.info.filter((el: TilesConfig) => el.type === 'coin'))
+    const coinGroup = new CoinGroup(
+      this,
+      map.info.filter((el: TilesConfig) => el.type === 'coin')
+    )
     const levelText = new LevelText(this, this.level)
     const phaserVersion = new PhaserVersionText(this, 0, 0, `Phaser v${Phaser.VERSION}`)
 
@@ -81,11 +87,7 @@ export default class MainScene extends Phaser.Scene {
       map.size.height / 8,
       map
     )
-    this.miniMap.setIgnore([
-      this.background,
-      levelText,
-      phaserVersion
-    ])
+    this.miniMap.setIgnore([this.background, levelText, phaserVersion])
     this.miniMap.update(this.player)
 
     // remove the loading screen
@@ -97,7 +99,7 @@ export default class MainScene extends Phaser.Scene {
         callback: () => {
           // @ts-ignore
           loadingScreen.remove()
-        }
+        },
       })
     }
 

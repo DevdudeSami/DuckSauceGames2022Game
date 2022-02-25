@@ -8,11 +8,11 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
   constructor(scene: Phaser.Scene, tilesConfig: TilesConfig[]) {
     super(scene)
 
-    this.tiles = tilesConfig.filter(tile => tile.type === 'tile')
-    let enemyTypes = tilesConfig.filter(tile => tile.type === 'enemy')
+    this.tiles = tilesConfig.filter((tile) => tile.type === 'tile')
+    let enemyTypes = tilesConfig.filter((tile) => tile.type === 'enemy')
 
     let enemies: Array<BeeSprite | SlimeSprite> = []
-    enemyTypes.forEach(enemy => {
+    enemyTypes.forEach((enemy) => {
       switch (enemy.texture) {
         case 'bee':
           enemies.push(new BeeSprite(scene, enemy.x, enemy.y))
@@ -33,7 +33,7 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
 
       let enemyIsMovingRight = enemy.body.velocity.x >= 0
 
-      let hasGroundDetection = this.tiles.filter(tile => {
+      let hasGroundDetection = this.tiles.filter((tile) => {
         let enemyPositionX = enemyIsMovingRight ? enemy.body.right : enemy.body.left
         let x = enemyPositionX + 32 > tile.x && enemyPositionX - 32 < tile.x + this.TILE_SIZE
         let y =

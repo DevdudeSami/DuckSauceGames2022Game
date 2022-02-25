@@ -29,7 +29,7 @@ export default class EnemyClass extends Phaser.Physics.Arcade.Sprite {
       alpha: 0,
       onComplete: () => {
         this.destroy()
-      }
+      },
     })
   }
 }

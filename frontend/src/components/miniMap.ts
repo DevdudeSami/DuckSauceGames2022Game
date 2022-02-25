@@ -14,7 +14,7 @@ export default class MiniMap {
   }
 
   setIgnore(gameObject: any[]) {
-    gameObject.forEach(obj => {
+    gameObject.forEach((obj) => {
       this.camera.ignore(obj)
     })
   }
