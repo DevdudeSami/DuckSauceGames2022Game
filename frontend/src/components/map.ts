@@ -13,15 +13,15 @@ export class Map {
     const config: any = {
       '[': {
         type: 'tile',
-        texture: 'tile-left',
+        texture: 'mountain_platform',
       },
       '/': {
         type: 'tile',
-        texture: 'tile-middle',
+        texture: 'mountain_platform',
       },
       ']': {
         type: 'tile',
-        texture: 'tile-right',
+        texture: 'mountain_platform',
       },
       G: {
         type: 'goal',

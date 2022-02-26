@@ -11,5 +11,8 @@ export default class TilesSingle extends Phaser.Physics.Arcade.Sprite {
     this.body.checkCollision.down = false
     this.body.checkCollision.right = false
     this.body.checkCollision.left = false
+
+    this.setScale(2)
+    this.body.setOffset(0, 10)
   }
 }
