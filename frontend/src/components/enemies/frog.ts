@@ -19,8 +19,7 @@ export default class FrogSprite extends EnemyClass {
     //@ts-ignore
     this.body.setVelocityX(-60)
     this.setOrigin(0.5, 1)
-    this.setScale(3,3)
-    this.body.setSize(40, 40)
+    this.body.setSize(120, 120)
     this.body.setOffset(0,0)
   }
 

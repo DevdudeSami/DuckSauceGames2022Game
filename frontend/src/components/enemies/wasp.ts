@@ -17,7 +17,6 @@ export default class WaspSprite extends EnemyClass {
 
     //@ts-ignore
     this.body.setVelocityX(-120)
-    this.setScale(3,3)
     this.setOrigin(0.5, 1)
     this.body.setSize(40, 40)
     this.body.setOffset(0,0)
