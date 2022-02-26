@@ -14,58 +14,58 @@ const emptyLevel: Level = [
 
 // prettier-ignore
 const level0: Level = [
-  '    S    B     ',
+  '    F    W     ',
   '  [////]       ',
-  '               ',
+  '      C        ',
   '   P         G ',
   '[/////]   [///]',
 ]
 
 // prettier-ignore
 const level1:Level=[
-  '                 B                    ',
+  '                 W      C             ',
   '               [////]                 ',
-  '            B  O     O                 ',
-  '   S                     S    S    G  ',
+  '     C      W  O     O                 ',
+  '   F                     F    F    G  ',
   '[//]       [////]   [////]   [//////] ',
   '    O   O                             ',
-  ' P        B                           ',
+  ' P        W                           ',
   '[///]  [//]                           ',
   ]
 
 // prettier-ignore
 const level2: Level =[
   ' P                     [//]       G   ',
-  '[/]    O   B        O           [/]   ',
+  '[/]    O   W        O     C     [/]   ',
   '         [//]     [//]                ',
-  '      S                     B  B      ',
-  ' O  [//]      B            [///]      ',
+  '      F                     W  W      ',
+  ' O  [//]      W    C       [///]      ',
   '         O  [///]     []  O        O  ',
-  '[]                                    ',
+  '[]               C            C       ',
   '         [/]            [/]      [/]  '
 ]
 
 // prettier-ignore
 const level3: Level = [
   '       O                                    ',
-  '                      O                 O   ',
+  '              C       O                 O   ',
   '      [///]                 O      [////]   ',
-  '           [///]       S  [//]              ',
+  '           [///]       F  [//]              ',
   '                   [///]      [///]         ',
-  '             S                              ',
+  '             F                              ',
   '         [///]           O              G   ',
-  '      O            O               [////]   ',
-  '  P                     S  B                ',
+  '      O       C    O               [////]   ',
+  '  P                     F  W                ',
   '[//////]       [///]  [////]                '
 ]
 
 // prettier-ignore
 const level4: Level = [
-  '                        O  O         S                                  ',
-  '                                 [//////]           B                G  ',
-  '                  O    [/////]                [///////]          [////] ',
-  '                                                                        ',
-  '  P      S     B    B              O       S     S         S            ',
+  '                C       O  O         F              C                   ',
+  '        C    C                   [//////]           W                G  ',
+  '      C           O    [/////]        C        [///////]    C    [////] ',
+  '                                                     C                  ',
+  '  P      F     W    W              O       F     F         F            ',
   '[////////]  [///////]             [/]    [////////////////////]         '
 ]
 

@@ -1,22 +1,22 @@
 import EnemyClass from './enemyClass'
-export default class WaspSprite extends EnemyClass {
+export default class CrowSprite extends EnemyClass {
   constructor(scene: Phaser.Scene, x: number, y: number) {
-    super(scene, x, y, 'wasp')
+    super(scene, x, y, 'crow')
     scene.add.existing(this)
     scene.physics.add.existing(this)
 
     scene.anims.create({
-      key: 'fly',
-      frames: scene.anims.generateFrameNumbers('wasp', { start: 0, end: 1 }),
+      key: 'fly2',
+      frames: scene.anims.generateFrameNumbers('crow', { start: 0, end: 1 }),
       frameRate: 8,
       repeat: -1,
     })
-    this.play('fly')
+    this.play('fly2')
 
-    this.type = 'wasp'
+    this.type = 'crow'
 
     //@ts-ignore
-    this.body.setVelocityX(-120)
+    this.body.setVelocityX(-240)
     this.setScale(3,3)
     this.setOrigin(0.5, 1)
     this.body.setSize(40, 40)

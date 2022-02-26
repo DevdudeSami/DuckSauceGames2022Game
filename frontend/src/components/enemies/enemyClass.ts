@@ -1,5 +1,6 @@
 export default class EnemyClass extends Phaser.Physics.Arcade.Sprite {
   protected _dead: boolean = false
+  public type: string = "enemy"
 
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
     super(scene, x, y, texture)

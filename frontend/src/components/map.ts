@@ -31,11 +31,11 @@ export class Map {
         type: 'coin',
         texture: 'coin',
       },
-      S: {
+      F: {
         type: 'enemy',
         texture: 'frog',
       },
-      B: {
+      W: {
         type: 'enemy',
         texture: 'wasp',
       },
@@ -43,6 +43,10 @@ export class Map {
         type: 'player',
         texture: 'player',
       },
+      C: {
+        type: 'enemy',
+        texture: 'crow',
+      }
     }
 
     const map = Levels[Map.calcCurrentLevel(currentLevel)]

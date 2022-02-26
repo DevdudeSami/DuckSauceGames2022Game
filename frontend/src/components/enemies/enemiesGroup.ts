@@ -1,6 +1,7 @@
 import FrogSprite from './frog'
 import EnemyClass from './enemyClass'
 import WaspSprite from './wasp'
+import CrowSprite from './crow'
 
 export default class EnemiesGroup extends Phaser.GameObjects.Group {
   tiles: TilesConfig[]
@@ -11,7 +12,7 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
     this.tiles = tilesConfig.filter((tile) => tile.type === 'tile')
     let enemyTypes = tilesConfig.filter((tile) => tile.type === 'enemy')
 
-    let enemies: Array<WaspSprite | FrogSprite> = []
+    let enemies: Array<WaspSprite | FrogSprite | CrowSprite> = []
     enemyTypes.forEach((enemy) => {
       switch (enemy.texture) {
         case 'wasp':
@@ -19,6 +20,9 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
           break
         case 'frog':
           enemies.push(new FrogSprite(scene, enemy.x, enemy.y))
+          break
+        case 'crow':
+          enemies.push(new CrowSprite(scene, enemy.x, enemy.y))
           break
       }
     })
@@ -28,8 +32,8 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
   update() {
     // check if the enemy should change its direction
     // @ts-ignore
-    this.children.iterate((enemy: WaspSprite | FrogSprite) => {
-      if((enemy as WaspSprite).type) {
+    this.children.iterate((enemy: WaspSprite | CrowSprite | FrogSprite) => {
+      if(enemy.type == 'wasp' || enemy.type == 'crow') {
         enemy.update()
         return
       }

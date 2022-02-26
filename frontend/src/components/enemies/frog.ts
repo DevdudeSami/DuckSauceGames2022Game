@@ -5,6 +5,8 @@ export default class FrogSprite extends EnemyClass {
     scene.add.existing(this)
     scene.physics.add.existing(this)
 
+    this.type = 'frog'
+
     scene.anims.create({
       key: 'crawl',
       frames: scene.anims.generateFrameNumbers('frog', { start: 0, end: 4 }),
