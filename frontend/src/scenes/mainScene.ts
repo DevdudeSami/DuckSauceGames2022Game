@@ -120,6 +120,8 @@ export default class MainScene extends Phaser.Scene {
       resize()
     })
     resize()
+
+    this.sound.add("background_music", {loop: false})
   }
 
   update() {

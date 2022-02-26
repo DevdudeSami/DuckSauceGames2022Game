@@ -21,6 +21,8 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.setPath('assets/spine')
     // @ts-ignore
     this.load.spine('boy', 'boy.json', 'boy.atlas')
+
+    this.load.audio("background_music", ["battle_tunes.mp3"]);
   }
 
   create() {
