@@ -25,8 +25,8 @@ export default class EnemyClass extends Phaser.Physics.Arcade.Sprite {
 
     this.scene.tweens.add({
       targets: this,
-      delay: 2000,
-      duration: 600,
+      delay: 200,
+      duration: 200,
       alpha: 0,
       onComplete: () => {
         this.destroy()
