@@ -81,23 +81,23 @@ export default class MainScene extends Phaser.Scene {
       goal.nextLevel(this, this.level)
     })
 
-    this.miniMap = new MiniMap(
-      this,
-      10,
-      10,
-      Math.min(map.size.width / 8, (map.size.height / 8) * 2.5),
-      map.size.height / 8,
-      map
-    )
-    this.miniMap.setIgnore([this.background, levelText, phaserVersion])
-    this.miniMap.update(this.player)
+    // this.miniMap = new MiniMap(
+    //   this,
+    //   10,
+    //   10,
+    //   Math.min(map.size.width / 8, (map.size.height / 8) * 2.5),
+    //   map.size.height / 8,
+    //   map
+    // )
+    // this.miniMap.setIgnore([this.background, levelText, phaserVersion])
+    // this.miniMap.update(this.player)
 
     // remove the loading screen
     let loadingScreen = document.getElementById('loading-screen')
     if (loadingScreen) {
       loadingScreen.classList.add('transparent')
       this.time.addEvent({
-        delay: 1000,
+        delay: 5000,
         callback: () => {
           // @ts-ignore
           loadingScreen.remove()
@@ -128,6 +128,6 @@ export default class MainScene extends Phaser.Scene {
     this.background.parallax()
     this.enemiesGroup.update()
     this.player.update(this.cursors)
-    this.miniMap.update(this.player)
+    // this.miniMap.update(this.player)
   }
 }
