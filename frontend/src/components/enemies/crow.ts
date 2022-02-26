@@ -1,4 +1,6 @@
 import EnemyClass from './enemyClass'
+import getRandomInt from '../../utils'
+
 export default class CrowSprite extends EnemyClass {
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, 'crow')
@@ -16,7 +18,7 @@ export default class CrowSprite extends EnemyClass {
     this.type = 'crow'
 
     //@ts-ignore
-    this.body.setVelocityX(-240)
+    this.body.setVelocityX(-getRandomInt(220, 280))
     this.setOrigin(0.5, 1)
     this.body.setSize(40, 40)
     this.body.setOffset(0,0)
