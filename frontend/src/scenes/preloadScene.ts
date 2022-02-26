@@ -6,7 +6,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   preload() {
-    const images = ['tile-left', 'tile-middle', 'tile-right', 'tile-single', 'controls', 'background', 'goal']
+    const images = ['tile-left', 'tile-middle', 'tile-right', 'tile-single', 'controls', 'background', 'city', 'cave', 'goal']
     images.forEach((img) => {
       this.load.image(img, `assets/img/${img}.png`)
     })
