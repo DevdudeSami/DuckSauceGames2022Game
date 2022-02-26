@@ -24,7 +24,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     scene.anims.create({
       key: 'wriggle',
-      frames: scene.anims.generateFrameNumbers('worm', { start: 0, end: 1 }),
+      frames: scene.anims.generateFrameNumbers('worm2', { start: 0, end: 1 }),
       frameRate: 8,
       repeat: -1,
     })
