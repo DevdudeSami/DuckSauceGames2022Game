@@ -1,4 +1,6 @@
 import EnemyClass from './enemyClass'
+import getRandomInt from '../../utils'
+
 export default class WaspSprite extends EnemyClass {
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, 'wasp')
@@ -16,7 +18,7 @@ export default class WaspSprite extends EnemyClass {
     this.type = 'wasp'
 
     //@ts-ignore
-    this.body.setVelocityX(-120)
+    this.body.setVelocityX(-getRandomInt(100, 120))
     this.setOrigin(0.5, 1)
     this.body.setSize(40, 40)
     this.body.setOffset(0,0)

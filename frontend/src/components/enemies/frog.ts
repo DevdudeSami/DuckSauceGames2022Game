@@ -1,3 +1,4 @@
+import getRandomInt from '../../utils'
 import EnemyClass from './enemyClass'
 export default class FrogSprite extends EnemyClass {
   constructor(scene: Phaser.Scene, x: number, y: number) {
@@ -17,7 +18,7 @@ export default class FrogSprite extends EnemyClass {
     this.play('crawl')
 
     //@ts-ignore
-    this.body.setVelocityX(-60)
+    this.body.setVelocityX(-getRandomInt(60, 80))
     this.setOrigin(0.5, 1)
     this.body.setSize(120, 120)
     this.body.setOffset(0,0)
