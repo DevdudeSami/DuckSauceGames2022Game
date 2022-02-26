@@ -14,7 +14,7 @@ const emptyLevel: Level = [
 
 // prettier-ignore
 const level0: Level = [
-  '    S          ',
+  '    S    B     ',
   '  [////]       ',
   '               ',
   '   P         G ',
@@ -25,8 +25,8 @@ const level0: Level = [
 const level1:Level=[
   '                 B                    ',
   '               [////]                 ',
-  '              O     O                 ',
-  '   S       B             S    S    G  ',
+  '            B  O     O                 ',
+  '   S                     S    S    G  ',
   '[//]       [////]   [////]   [//////] ',
   '    O   O                             ',
   ' P        B                           ',

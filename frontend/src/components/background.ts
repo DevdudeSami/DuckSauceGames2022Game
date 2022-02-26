@@ -7,7 +7,7 @@ export default class Background extends Phaser.GameObjects.TileSprite {
   }
 
   adjustPosition() {
-    const imgHeight = 648
+    const imgHeight = 75
     this.setScale(this.scene.cameras.main.height / imgHeight)
     this.x = this.scene.cameras.main.centerX
     this.y = this.scene.cameras.main.centerY

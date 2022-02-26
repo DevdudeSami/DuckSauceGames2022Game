@@ -2,7 +2,8 @@ import { Map } from '../components/map'
 import TilesGroup from '../components/tiles/tilesGroup'
 import Player from '../components/player/player'
 import CoinGroup from '../components/coins/coinGroup'
-import BeeSprite from '../components/enemies/bee'
+import WaspSprite from '../components/enemies/wasp'
+import FrogSprite from '../components/enemies/frog'
 import EnemiesGroup from '../components/enemies/enemiesGroup'
 import GoalSprite from '../components/goalSprite'
 import LevelText from '../components/levelText'
@@ -62,7 +63,7 @@ export default class MainScene extends Phaser.Scene {
     this.physics.add.collider(this.tilesGroup, this.player)
     this.physics.add.collider(this.tilesGroup, this.enemiesGroup)
     // @ts-ignore
-    this.physics.add.overlap(this.player, this.enemiesGroup, (player: Player, enemy: BeeSprite) => {
+    this.physics.add.overlap(this.player, this.enemiesGroup, (player: Player, enemy: WaspSprite) => {
       if (enemy.dead) return
       if (enemy.body.touching.up && player.body.touching.down) {
         player.killEnemy()

@@ -12,15 +12,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.scene = scene
     this.mapSize = mapSize
 
-    // scene.anims.create({
-    //   key: 'walk',
-    //   frames: scene.anims.generateFrameNames('player'),
-    //   frameRate: 8,
-    //   repeat: -1
-    // })
-    // this.play('walk')
-
-
     this.setOrigin(0, 1)
     this.setDragX(1500)
     this.body.setSize(20, 20)

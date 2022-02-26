@@ -1,6 +1,6 @@
-import BeeSprite from './bee'
-import SlimeSprite from './slime'
+import FrogSprite from './frog'
 import EnemyClass from './enemyClass'
+import WaspSprite from './wasp'
 
 export default class EnemiesGroup extends Phaser.GameObjects.Group {
   tiles: TilesConfig[]
@@ -11,14 +11,14 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
     this.tiles = tilesConfig.filter((tile) => tile.type === 'tile')
     let enemyTypes = tilesConfig.filter((tile) => tile.type === 'enemy')
 
-    let enemies: Array<BeeSprite | SlimeSprite> = []
+    let enemies: Array<WaspSprite | FrogSprite> = []
     enemyTypes.forEach((enemy) => {
       switch (enemy.texture) {
-        case 'bee':
-          enemies.push(new BeeSprite(scene, enemy.x, enemy.y))
+        case 'wasp':
+          enemies.push(new WaspSprite(scene, enemy.x, enemy.y))
           break
-        case 'slime':
-          enemies.push(new SlimeSprite(scene, enemy.x, enemy.y))
+        case 'frog':
+          enemies.push(new FrogSprite(scene, enemy.x, enemy.y))
           break
       }
     })
@@ -28,7 +28,11 @@ export default class EnemiesGroup extends Phaser.GameObjects.Group {
   update() {
     // check if the enemy should change its direction
     // @ts-ignore
-    this.children.iterate((enemy: BeeSprite | SlimeSprite) => {
+    this.children.iterate((enemy: WaspSprite | FrogSprite) => {
+      if((enemy as WaspSprite).type) {
+        enemy.update()
+        return
+      }
       if (enemy.dead) return
 
       let enemyIsMovingRight = enemy.body.velocity.x >= 0

@@ -33,11 +33,11 @@ export class Map {
       },
       S: {
         type: 'enemy',
-        texture: 'slime',
+        texture: 'frog',
       },
       B: {
         type: 'enemy',
-        texture: 'bee',
+        texture: 'wasp',
       },
       P: {
         type: 'player',
