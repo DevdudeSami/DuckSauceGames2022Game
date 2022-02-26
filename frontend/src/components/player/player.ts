@@ -1,5 +1,11 @@
 import Projectile from "../projectile"
 
+export enum WormType {
+  Normal = "worm",
+  Wizard = "worm2",
+  Pirate = "pirate"
+}
+
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   private _dead: boolean = false
   private _halt: boolean = false
@@ -7,11 +13,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
   private spaceBarPressedObj: any
 
+  public wormType: WormType = Math.random() > 0.5 ? WormType.Normal : WormType.Wizard
+
   constructor(scene: Phaser.Scene, player: TilesConfig, mapSize: MapSize, level: number) {
     super(scene, player.x, player.y, player.texture)
     scene.add.existing(this)
     scene.physics.add.existing(this)
-
     this.scene = scene
     this.mapSize = mapSize
 
@@ -23,12 +30,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.spaceBarPressedObj = scene.input.keyboard.addKey('SPACE')
 
     scene.anims.create({
-      key: 'wriggle',
-      frames: scene.anims.generateFrameNumbers('worm2', { start: 0, end: 1 }),
+      key: this.wormType,
+      frames: scene.anims.generateFrameNumbers(this.wormType, { start: 0, end: 1 }),
       frameRate: 8,
       repeat: -1,
     })
-    this.play('wriggle')
+    this.play(this.wormType)
 
   }
 
@@ -96,7 +103,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   lookingRight = true
 
   shoot() {
-    if(!this.allowToShoot) {
+    if(this.wormType != WormType.Wizard || !this.allowToShoot) {
       return
     }
     this.allowToShoot = false

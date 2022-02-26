@@ -1,6 +1,6 @@
 import { Map } from '../components/map'
 import TilesGroup from '../components/tiles/tilesGroup'
-import Player from '../components/player/player'
+import Player, { WormType } from '../components/player/player'
 import CoinGroup from '../components/coins/coinGroup'
 import WaspSprite from '../components/enemies/wasp'
 import FrogSprite from '../components/enemies/frog'
@@ -66,7 +66,7 @@ export default class MainScene extends Phaser.Scene {
     // @ts-ignore
     this.physics.add.overlap(this.player, this.enemiesGroup, (player: Player, enemy: WaspSprite | CrowSprite) => {
       if (enemy.dead) return
-      if (enemy.body.touching.up && player.body.touching.down) {
+      if (enemy.body.touching.up && player.body.touching.down && player.wormType == WormType.Normal) {
         player.killEnemy()
         enemy.kill()
       } else {
