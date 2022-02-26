@@ -14,7 +14,7 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.spritesheet('coin', 'assets/img/coin.png', { frameHeight: 42, frameWidth: 42 })
     this.load.spritesheet('crow', 'assets/img/crow.png', { frameHeight: 40, frameWidth: 40 })
     this.load.spritesheet('wasp', 'assets/img/wasp.png', { frameHeight: 40, frameWidth: 40 })
-    this.load.spritesheet('worm', 'assets/img/worm.png', { frameHeight: 20, frameWidth: 20 })
+    this.load.spritesheet('worm', 'assets/img/worm.png', { frameHeight: 80, frameWidth: 80 })
     this.load.spritesheet('frog', 'assets/img/frog.png', { frameHeight: 40, frameWidth: 40 })
     this.load.setPath('assets/spine')
     // @ts-ignore
