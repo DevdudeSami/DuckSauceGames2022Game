@@ -1,6 +1,8 @@
 export default class Background extends Phaser.GameObjects.TileSprite {
   constructor(scene: Phaser.Scene) {
-    super(scene, 0, 0, 0, 0, 'background')
+    const backgrounds = ['background', 'city', 'cave']
+    const bgToUse = Math.floor(Math.random() * 3); 
+    super(scene, 0, 0, 0, 0, backgrounds[bgToUse])
     scene.add.existing(this)
 
     this.setOrigin(0.5).setScrollFactor(0)
