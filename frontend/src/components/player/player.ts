@@ -14,7 +14,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.setOrigin(0, 1)
     this.setDragX(1500)
-    this.body.setSize(20, 20)
+    this.body.setSize(80, 80)
     this.body.setOffset(0, 0)
 
     scene.anims.create({
@@ -23,7 +23,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       frameRate: 8,
       repeat: -1,
     })
-    this.setScale(3, 3);
     this.play('wriggle')
 
   }
